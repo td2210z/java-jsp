@@ -1,0 +1,32 @@
+package com.luv2code.web.jdbc;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.sql.DataSource;
+
+public class StudentDbUtil {
+	
+	
+	private DataSource dataSource;
+	
+	public StudentDbUtil(DataSource dataSource) {
+		this.dataSource = dataSource;
+	}
+	
+	public List<Student> getStudents(){
+		
+		ArrayList<Student> students = new ArrayList<>();
+		Connection con = null;
+		Statement statement  = null;
+		ResultSet resultSet = null;
+		
+		
+		return students;
+		
+		
+	}
+}

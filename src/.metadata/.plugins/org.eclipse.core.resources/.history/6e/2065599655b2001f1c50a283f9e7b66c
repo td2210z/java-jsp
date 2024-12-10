@@ -1,0 +1,86 @@
+package com.luv2code.web.jdbc;
+
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.sql.DataSource;
+
+public class StudentDbUtil {
+	
+	private DataSource dataSource;
+	
+	public StudentDbUtil(DataSource theDataSource) {
+		dataSource = theDataSource;
+		
+	}
+	
+	public List<Student> getStudents() throws Exception{
+		List<Student> students = new ArrayList<Student>();
+		
+		
+		Connection myCon = null;
+		Statement st = null;
+		ResultSet set = null;
+		try {
+			myCon = dataSource.getConnection();
+			
+			String sql = "select * from student";
+			
+			st = myCon.createStatement();
+			
+			set = st.executeQuery(sql);
+			
+			while (set.next()) {
+				int id = set.getInt("id");
+				String fr = set.getString("first_name");
+				String ls = set.getString("last_name");
+				String em = set.getString("email");
+				
+				Student a = new Student(id, fr, ls, em);
+				
+				students.add(a);
+				
+				
+			}
+					
+			return students;
+	
+			
+		} finally {
+			close(myCon , st , set);
+			
+		}
+		
+		
+		
+		
+		
+	}
+	
+	private void close(Connection myCon , Statement st , ResultSet set) {
+		try {
+			if(st != null) {
+				st.close();
+			}
+			if(set != null) {
+				set.close();
+			}
+			if(myCon != null) {
+				myCon.close();
+			}
+			
+		} catch (Exception exc) {
+			exc.printStackTrace();
+		}
+		
+	}
+	
+	
+	
+
+
+}

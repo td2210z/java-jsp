@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+ <title>Add</title>
+ <link type = "text/css" rel = "stylesheet" href = "css/style.css">
+ <link type = "text/css" rel = "stylesheet" href = "css/add-student-style.css">
+ 
+</head>
+   <div id  = "wrapper">
+       <div id = "header">
+          <h2>FoodBar</h2>
+       </div>
+   </div>
+
+<body>
+</body>
+</html>

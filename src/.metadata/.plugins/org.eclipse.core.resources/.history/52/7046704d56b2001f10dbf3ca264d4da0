@@ -1,0 +1,22 @@
+<%@ page import = "java.util.*, com.luv2code.web.jdbc.*" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách sinh viên</title>
+</head>
+<body>
+    <%
+        List<Student> best = (List<Student>) request.getAttribute("ST_LIST");
+        if (best == null) {
+            out.println("<p>Không có dữ liệu sinh viên.</p>");
+        } else {
+            out.println("<ul>");
+            for (Student student : best) {
+                out.println("<li>" + student + "</li>");
+            }
+            out.println("</ul>");
+        }
+    %>
+</body>
+</html>
