@@ -4,11 +4,6 @@ Created: October 24, 2024 9:48 PM
 Tags: back-end, front-end
 Created by: Dinh Thang Nguyen
 
-```csharp
-//Your code here!
-HOC CODE NAO!
-
-```
 
 - What are web application
     - Một trang web nơi các trang HTML được tạo ra một cách năng động
